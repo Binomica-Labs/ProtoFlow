@@ -1,4 +1,3 @@
-
 PDF = {}
 PDF.new = function()
 	local pdf = {}		-- instance variable
