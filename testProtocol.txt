@@ -1,0 +1,20 @@
+1. To a clean 1000mL erlenmeyer flask, add 950mL of distilled water.
+2. Add a magnetic stirr bar strong enough to move 1L of liquid and place the flask onto a magnetic stirrer set to medium speed.
+3. Weigh 10 grams of Tryptone powder and add it to the stirring flask.
+4. Weigh 5 grams of Yeast Extract powder and add it to the stirring flask.
+5. Weigh 10 grams of Sodium Chloride powder and add it to the stirring flask.
+6. Allow at least 10 minutes for solution to fully dissolve.
+7. Calibrate your pH meter and measure the pH of the media.
+8. Adjust pH to 7.00 if needed. Use KOH, NaOH, or Baking Soda (Sodium Bicarbonate) to increase pH. Use Hydrochloric Acid or vinegar to decrease the pH.
+9. To a clean 1L Pyrex bottle, add 7.5 grams of agar.
+10. To another 1L Pyrex bottle, add 7.5 grams of agar.
+11. To a clean 1L Volumetric Flask, add the dissolved LB media and adjust the volume to the 1L mark.
+12. Split the LB media volume into 500mL aliquots using a 500mL Volumetric Flask and dispense each volume into a 1L Pyrex Bottles containing agar.
+13. Cap the pyrex bottles loosely, place autoclave indicator tape on the caps, and autoclave the media.
+14. Once the autoclave cycle is done and the chamber is depressurized, tighten the caps of each bottle, give a strong stirr to fully distribute any residual agar into solution. 
+15. Place the bottles in the laminar flow hood. Spray the mouth and cap region of the bottles before entering the hood.
+16. Using heat-protective gloves, pour the entire volume of molten LB Agar from one bottle into the other.
+17. Distribute 150mL of molten LB Agar media into each of six 250mL Pyrex Bottles.
+18. Using the remaining ~50mL of molten LB Agar media, pour two 100mm petri dishes and allow to solidify under laminar flow.
+19. Label all the bottles and plates made with the media name and date it was made. Store bottles tightly sealed at room temp and petri dishes wrapped in plastic wrap inverted in your refridgerators.
+20. Clean all used glasswear, dispose of consumables, and ensure pH meter probe is in storage solution and is upright to avoid bulb dehydration.
