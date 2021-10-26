@@ -43,7 +43,8 @@ print("First line of protocol: "..protocol[1])
 
 IDnum = protocol[1]
 Author = protocol[2]
-Description = protocol[3]
+Title = protocol[3]
+Description = protocol[4]
 
 for i=4, #protocol do
  steps[i-4] = protocol[i]
@@ -54,6 +55,7 @@ print("First Step: " .. steps[1])
 print("protocol parsing ready")
 print(IDnum)
 print(Author)
+print(Title)
 print(Description)
 print("Steps: "..#steps)
 print(steps[1])
