@@ -1,0 +1,5 @@
+ID: SSC-BACT-0001 (3 letter author initial)-(kingdom of life)-(numerical ID)
+Author: Sebastian S. Cocioba (author name or handle if wish to remain anon)
+Title: LB Agar Media Prep (descriptive succinct title of protocol)
+Description: (short description discussing the summary of protocol)
+1. (first line of protocol. one line per step, no extra spaces between steps) [pictureName.jpg] 
