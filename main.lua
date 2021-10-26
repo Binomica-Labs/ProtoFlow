@@ -57,6 +57,5 @@ print(IDnum)
 print(Author)
 print(Title)
 print(Description)
-print("Steps: "..#steps)
+print("Steps: "..#steps - 1)
 print(steps[1])
-
