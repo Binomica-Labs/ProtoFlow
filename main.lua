@@ -45,10 +45,15 @@ IDnum = protocol[1]
 Author = protocol[2]
 Description = protocol[3]
 
-for k in pairs(protocol) do
- table.insert(k, steps)
+for i=4, #protocol do
+ steps[i-4] = protocol[i]
 end
 
-print(steps[1])
+print("First Step: " .. steps[1])
 
---for loop that puts each step of the protocol into its own table protocol[4] through protocol[#protocol]
+print("protocol parsing ready")
+print(IDnum)
+print(Author)
+print(Description)
+print("Steps: "..#steps)
+print(steps[1])
