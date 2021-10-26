@@ -32,6 +32,7 @@ if not inputFile or not outputFile then
 end
 
 protocol = {}
+steps = {}
 
 for line in inputFile:lines() do
 	table.insert(protocol, line)
@@ -44,3 +45,10 @@ IDnum = protocol[1]
 Author = protocol[2]
 Description = protocol[3]
 
+for k in pairs(protocol) do
+ table.insert(k, steps)
+end
+
+print(steps[1])
+
+--for loop that puts each step of the protocol into its own table protocol[4] through protocol[#protocol]
