@@ -1,3 +1,7 @@
+ID: SSC-BACT-0001
+Author: Sebastian S. Cocioba
+Title: LB Agar Media Prep
+Description: A simple media formulation for making standard LB agar (miller modification). 
 1. To a clean 1000mL erlenmeyer flask, add 950mL of distilled water.
 2. Add a magnetic stirr bar strong enough to move 1L of liquid and place the flask onto a magnetic stirrer set to medium speed.
 3. Weigh 10 grams of Tryptone powder and add it to the stirring flask.
