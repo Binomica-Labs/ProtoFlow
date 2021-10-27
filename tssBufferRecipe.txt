@@ -1,0 +1,9 @@
+ID: SSC-BACT-0003 
+Author: Sebastian S. Cocioba 
+Title: Transformation and Storage Buffer (TSS) Recipe
+Description: A recipe for how to make the chemical transformation buffer for E. coli cells (openwetware.org)
+1. To a sterile 50mL centrifuge tube add 5 grams of PEG 3350 (Miralax).
+2. Then add either 0.3g of MgCl2*6H2O or 1.5mL of 1M MgCl2.
+3. Next add 2.5mL of pure DMSO.
+4. Finally, add sterile LB Broth to the 40mL mark, vortex until fully dissolved, and top off to the 50mL mark.
+5. Filter sterilize media with a 0.22um syringe filter and store at -20C.

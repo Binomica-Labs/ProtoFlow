@@ -1,0 +1,15 @@
+ID: SSC-BACT-0004
+Author: Sebastian S. Cocioba
+Title: Heat Shock of Chemically Competent E. coli Cells
+Description: A method for transforming E. coli with plasmids using heat shock.
+1. Set a PCR machine to hold at 42C to pre-heat.
+2. Prepare an ice bucket full of crushed ice and remove TSS Competent E. coli cells from freezer along with plasmids to transform. Thaw all on ice.
+3. To a sterile PCR tube, add 2uL of miniprepped plasmid or 10uL of ligation reaction. Label the tube and place on ice.
+4. Vortex the thawed competent cell tube briefly and dispense 100uL of cells to the tube containing DNA. Vortex briefly to mix and place immediately back on ice. Ensure tube is making contact with ice all around.
+5. Incubate the cells and DNA on ice for 10mins.
+6. Set a timer for 1m 40sec and place hands on cell tube. At exactly the 1m 31sec mark, move the tubes onto the PCR block. At the exactly 0m 1sec, place tubes back on ice. This needs to be done as quickly as possible.
+7. Allow the cells to recover on ice for 5mins.
+8. Add 900uL of LB Broth to a sterile 1.5mL tube under aseptic conditions and then add all the contents of the shocked cell tube to the LB Broth tube. Invert 5x to mix.
+9. Place 1.5mL tube full of shocked cells in small box and let it rattle around in an incubator shaker for 1hr if ampicillin resistant plasmid or 2hrs if kanamycin plasmid. Place petri dishes containing LB agar + antibiotics in static 37C incubator to pre-warm.
+10. Plate 100uL of the transformed and recovered cells onto pre-warmed LB Agar plates containing the appropriate antibiotics.
+11. Incubate overnight at 37C and look for colonies the following morning.

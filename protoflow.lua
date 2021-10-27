@@ -37,6 +37,13 @@ if #steps > 1 then print("Steps: " .. #steps - 1) end
 print("First Step: " .. steps[1])
 end
 
+function newUser()
+	io.write("Hello and welcome, new user! What's your name? ")
+	local userName = io.read()
+	io.write("Nice to meet you, " .. userName .. "!")
+end
+
+
 --handle passed arguments for later use 
 if #arg < 1 then
 	print("")
@@ -63,4 +70,8 @@ if arg[1] == "compile" then
 		print("")
 		return
 	end
+end
+
+if arg[1] == "newuser" then
+	newUser()
 end
