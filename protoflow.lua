@@ -67,7 +67,9 @@ function formatProtocol(inputData)
 	for i=0, #steps-1 do
 		local currentStep = step[i]
 		local formattedStep = authID .. "," .. 
-							  methodType .. "," .. currentStepNumber .. "," .. 
+							  methodType .. "," ..
+							   currentStepNumber .. "," .. 
+							   
 	end
 				
 end
