@@ -68,8 +68,12 @@ function formatProtocol(inputData)
 		local currentStep = step[i]
 		local formattedStep = authID .. "," .. 
 							  methodType .. "," ..
-							   currentStepNumber .. "," .. 
-							   
+							  currentStepNumber .. "," ..
+							  currentStepTime .. "," ..
+							  currentImagePath .. "," ..
+							  currentStep 
+
+							  
 	end
 				
 end
