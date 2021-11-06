@@ -1,0 +1,22 @@
+Start of Journal
+
+
+
+Entry 1 - Nov 6, 2021
+
+I totally forgot to start a journla logging the progress of this program's development so why not start now. Here we go!The aim
+of the project is to make a simple protocol writer, reader, and manager for people to exchange protocols with. Each step in the
+protocol has a header attached to it specifying the author's name, date generated, protocol title, protocol step name, and time
+required for this step. The human readable output of these protocol files, when the user wishes to print or export, is a full 
+color PDF with images outlining each step. Users can upload their protocol library to the community's GIT account and pull the
+latest method chains from the repository. Every time you pull from this repositiory, all the protocols will be updated to the
+latest versions. A git push will likely happen once a week at some universally agreed upon time as to keep the central repository
+up to date. By not having to manage the actual servers and whatnot, we can focus on designing the client side steps and chains.
+Glory be to GitHub!
+
+
+Entry 2 -
+
+
+
+End of Journl
