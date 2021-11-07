@@ -9,10 +9,11 @@
 
 
 --functions
+local users = require("Admin/Users")
+
 function convertToPDF(input, output)
 local protocol = {}
 local steps = {}
-
 for line in input:lines() do
 	table.insert(protocol, line)
 end
@@ -78,14 +79,6 @@ end
 
 
 
-function newUser()
-	io.write("Hello and welcome, new user! What's your name? ")
-	local userName = io.read()
-	io.write("Nice to meet you, " .. userName .. "!")
-end
-
-
-
 --handle passed arguments for later use 
 if #arg < 1 then
 	print("")
@@ -104,7 +97,6 @@ end
 if arg[1] == "format" then
 --set file logic and catch loading errors
 	local inputFile = io.open(arg[2], "r")
-	formatProtocol(inputFile)
 	if not inputFile then
 		print("")
 		print("")
@@ -113,6 +105,7 @@ if arg[1] == "format" then
 		print("")
 		return
 	end
+		formatProtocol(inputFile)
 end
 
 
@@ -135,5 +128,5 @@ end
 
 
 if arg[1] == "newuser" then
-	newUser()
+	users.newUser()
 end
