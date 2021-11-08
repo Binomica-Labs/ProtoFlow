@@ -46,10 +46,15 @@ end
 function Users:newUser()
 	io.write("Hello and welcome, new user! What's your name? ")
 	local userName = io.read()
+	if userName ~= "" then
 	io.write("Nice to meet you, " .. userName .. "!" .."\n")
 	io.write("What's your 3 letter author handle? ")
 	local userHandle = string.upper(io.read())
 	io.write("Saving your user name and handle to file!\n")
+	rawUserList:write(userName .. "/" .. userHandle)
+	rawUserList:close()
+	else print("Please type in a User Name!\n")
+	end
 end
 
 function Users:getUsers(userList)
