@@ -9,78 +9,15 @@
 
 
 --functions
-local users = require("Admin/Users")
-
-function convertToPDF(input, output)
-local protocol = {}
-local steps = {}
-for line in input:lines() do
-	table.insert(protocol, line)
-end
-
-print("Number of lines in protocol: "..#protocol)
-print("First line of protocol: "..protocol[1])
-
-local IDnum = protocol[1]
-local Author = protocol[2]
-local Title = protocol[3]
-local Description = protocol[4]
-
-for i=4, #protocol do
- steps[i-4] = protocol[i]
-end
-
---some colsole read outs to check variables loaded properly
-print(IDnum)
-print(Author)
-print(Title)
-print(Description)
-if #steps <= 1 then print("Steps: 1") end
-if #steps > 1 then print("Steps: " .. #steps - 1) end
-print("First Step: " .. steps[1])
-end
-
-
-
-function formatProtocol(inputData)
-	local protocol = {}
-	local steps = {}
-	
-	for line in inputData:lines() do
-		table.insert(protocol, line)
-	end
-	
-	local idNum = protocol[1]
-	local author = protocol[2]
-	local title = protocol[3]
-	local description = protocol[4]
-
-	local authID = "SSC"
-	local methodType = "BACT"
-	local currentStepTime = 60
-	local currentImagePath = "1.jpg"
-	local currentStepNumber = 1
-	
-	for i=4, #protocol do
-		steps[i-4] = protocol[i]
-	end
-
-	for i=0, #steps-1 do
-		local currentStep = step[i]
-		local formattedStep = authID .. "," .. 
-							  methodType .. "," ..
-							  currentStepNumber .. "," ..
-							  currentStepTime .. "," ..
-							  currentImagePath .. "," ..
-							  currentStep 
-	end
-				
-end
+local users = require("Users")
+local format = require("Format")
+local generator = require("Generator")
 
 
 
 --handle passed arguments for later use 
 if #arg < 1 then
+	os.execute("clear")
 	print("")
 	print("ProtoFlow v1.0 - CLI Bioprotocol Designer")
 	print("----------------------------------------------------------------------------")
@@ -96,8 +33,18 @@ end
 
 if arg[1] == "format" then
 --set file logic and catch loading errors
-	local inputFile = io.open(arg[2], "r")
-	if not inputFile then
+	if not arg[2] then 
+		print("")
+		print("")
+		print("Error: Please define a file to be formatted!")
+		print("")
+		print("")
+		return
+	end
+	
+		fileToFormat = io.open(arg[2], "r")
+
+	if not fileToFormat then
 		print("")
 		print("")
 		print("Error: could not open file; check file name and path!")
@@ -105,7 +52,8 @@ if arg[1] == "format" then
 		print("")
 		return
 	end
-		formatProtocol(inputFile)
+		--print("format input file loaded")
+		format.formatProtocol(fileToFormat)
 end
 
 
@@ -123,6 +71,12 @@ if arg[1] == "compile" then
 		print("")
 		return
 	end
+end
+
+
+
+if arg[1] == "listusers" then
+	users.getUsers()
 end
 
 
