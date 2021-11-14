@@ -50,8 +50,8 @@ function Users:getUsers(userList)
 	for line in rawUserList:lines() do
 		local currentUserInfo = {}
 		currentUserInfo = split(line, "/")
-		local currentUserName = currentUserInfo[1]
-		local currentUserHandle = currentUserInfo[2]
+		local currentUserName = currentUserInfo[2]
+		local currentUserHandle = currentUserInfo[1]
 
 		users[currentUserName] = {userName = currentUserName, 
 								 userHandle = currentUserHandle}

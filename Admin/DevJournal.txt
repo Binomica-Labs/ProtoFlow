@@ -4,7 +4,7 @@ Start of Journal
 
 Entry 1 - Nov 6, 2021
 
-I totally forgot to start a journla logging the progress of this program's development so why not start now. Here we go!The aim
+I totally forgot to start a journal logging the progress of this program's development so why not start now. Here we go!The aim
 of the project is to make a simple protocol writer, reader, and manager for people to exchange protocols with. Each step in the
 protocol has a header attached to it specifying the author's name, date generated, protocol title, protocol step name, and time
 required for this step. The human readable output of these protocol files, when the user wishes to print or export, is a full 
@@ -15,8 +15,24 @@ up to date. By not having to manage the actual servers and whatnot, we can focus
 Glory be to GitHub!
 
 
-Entry 2 -
+Entry 2 - Nov 14th, 2021
+
+Trying to think of a way to lay out the protocol flow idea. What I want the script to do is take a raw protocol file (written 
+using a template) and chop it up into steps. These steps have a CSV style format where the human readable step instructions 
+are at the very end of the row. The header file should start with the 3 letter author id, then some sort of numerical indicator 
+of the protocol followed by the step number, the time required for the step in seconds, a character indicating the step also
+contains a picture (P) or not (N) (reserving other letters for future added media like code, video, etc), and finally the 
+actual step instructions. An example would be:
+
+	"SSC,32,5,600,P,"Spin down the cells for 10 minutes".   
+
+Each of these steps will be added to the collective pool which can then be used to generate protocol chains or make collages of
+existing protocol steps. Authorship is maintained in the header of the CSV entry and the pool will be accessible to anyone using
+this either via GitHub or a later ftp request from our central server. As for the handling of media like photos for each step, the
+image file name should contain the first three parts of the Step Pool's CSV tag. An image relating to the 5th step in protocol 32 
+written by the user SSC should have a file name as such:
+
+	"SSC325.png"
 
 
-
-End of Journl
+End of Journal
