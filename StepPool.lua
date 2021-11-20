@@ -1,7 +1,9 @@
 local StepPool = {}
 
-pool = {}
-
+local pool = {)
+pool.userHandle = ""
+pool.protocolNumber = ""
+pool.stepNumber = ""
 local function fileExists(fileName)
 	local f = io.open(fileName, "r")
 	if f ~= nil then io.close(f)
@@ -76,32 +78,28 @@ end
 
 function StepPool:addStep(stepID, step, timeNeeded, v)
 	if v~=nil then
-		io.write(
-					"Let's add a step to an existing protocol! First, let's begin with your user handle. 
-				   	This is a 3 letter all-caps code you assigned when you made a user name. ex. SSC\n"
-			   	)
+		io.write("Let's add a step to an existing protocol! First, let's begin with your user handle. This is a 3 letter all-caps code you assigned when you made a user name. ex. SSC\n")
 
 		local inputHandle = io.read()
 		if checkHandle(inputHandle) ~= true then
 
-			io.write("Welcome back, " .. userName .. "!" .."\n")
+			io.write("Welcome back, " .. inputHandle .. "!" .."\n")
 			io.write("Tell me what protocol number this step will be adding to? ")
 			local inputProtocol = io.read()
 			if checkProtocol(inputProtocol) ~= nil then
-			io.write("I found a protocol matching this number. Is this correct: \n")
-			io.write(pool[inputHandle] )  --still brokewn 
-			io.write("Saving your user name and handle to file!\n")
-			rawUserList:write(userName .. "/" .. userHandle .. "\n")
-			rawUserList:close()
+				io.write("I found a protocol matching this number. Is this correct: \n")
+				io.write(pool[inputHandle].stepData)  --still brokewn 
+				io.write("Saving your user name and handle to file!\n")
+				rawUserList:write(userName .. "/" .. userHandle .. "\n")
+				rawUserList:close()
 
-		else print("Please type in a User Name!\n")
-		end
-	
+			else print("Please type in a User Name!\n")
+			end
+	end		
 	if pool[stepID] ~= nil then
 		local step = formatStep(stepID, step, timeNeeded)
 		table.insert(pool, step)
-	else
-		
+	end	
 end
 
 function StepPool:removeStep()
@@ -119,3 +117,4 @@ end
 
 
 return StepPool
+end

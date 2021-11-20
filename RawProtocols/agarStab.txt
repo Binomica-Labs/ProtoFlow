@@ -1,0 +1,12 @@
+ID: SSC-BACT-0005
+Author: Sebastian S. Cocioba
+Title: How to make an Agar Stab
+Description: A method to cast agar stab tubes, grow colony cultures, and stab into tubes to preserve cell line.
+1. Prepare LB agar using Yeast Extract 5g/L, Tryptone 10g/L, Sodium Chloride 10g/L, and agar 15g/L.
+2. Prepare LB broth using similar media recipe as above but omit the agar.
+2. Autoclave the media or melt a bottle of solid media and dispense manually via tipping into sterile 2mL screw cap tubes with rubber gaskets. Carefully pour until below the screw cap body's threading.
+3. Tightly cap the tubes of molten LB agar and allow them to set for 20 minutes so agar is fully solidified.
+4. Take a single well isolated colony into a 125mL erlenmeyer flaks (with foam stopper) containing 20mL of LB broth + antibiotics if necessary to maintain a plasmid inside said cell line. Shake overnight at 37C 250rpm.
+5. The following day, under aseptic conditions, remove 10uL of the overnight culture using a sterile 10uL pipette tip and plunge tip into the center of the agar stab tube until just below the tip collar. Carefully life the tip out of the agar while gently dispensing the liquid within the tip into the cavity formed by the tip. Do this slowly.
+6. Cap the tube, label it with the cell line, plasmid name, abx requirements, and date. Incubate the tube upright at 37C overnight.
+7. Store the tubes vertically at 4C in a standard refrigerator; tubes last for at least one year but in my lab I've managed to recover tubes over three years old.
