@@ -79,7 +79,21 @@ if arg[1] == "listusers" then
 	users.getUsers()
 end
 
+if arg[1] == "listcats" then
 
+	catFile = io.open("Admin/categories.txt", "r")
+
+	if not catFile then
+		print("")
+		print("")
+		print("Error: could not open file; check file name and path!")
+		print("")
+		print("")
+		return
+	end
+	io.write("I found some cats!\n")
+	catFile:close()
+end
 
 if arg[1] == "newuser" then
 	activeUsers = users.newUser()	

@@ -1,5 +1,6 @@
-ID: SSC-BACT-0001
+Handle: SSC
 Author: Sebastian S. Cocioba
+Category: BACT
 Title: Colony PCR
 Description: Colony PCR from Liquid Mini Cultures
 1. Prepare 50mL of LB sterile LB Broth with the same antibiotic used to select the desired colony plate. For ampcilillin, final conc. should be 100mg/L. For kanamycin, the final concentration should be 50mg/L.

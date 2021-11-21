@@ -1,5 +1,7 @@
-ID: SSC-BACT-0005
+Handle: SSC
 Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: BACT
 Title: How to make an Agar Stab
 Description: A method to cast agar stab tubes, grow colony cultures, and stab into tubes to preserve cell line.
 1. Prepare LB agar using Yeast Extract 5g/L, Tryptone 10g/L, Sodium Chloride 10g/L, and agar 15g/L.

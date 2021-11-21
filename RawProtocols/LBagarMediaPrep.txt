@@ -1,5 +1,7 @@
-ID: SSC-BACT-0001
+Handle: SSC
 Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: RGNT
 Title: LB Agar Media Prep
 Description: A simple media formulation for making standard LB agar (miller modification). 
 1. To a clean 1000mL erlenmeyer flask, add 950mL of distilled water.

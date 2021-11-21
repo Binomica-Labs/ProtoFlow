@@ -1,5 +1,7 @@
-ID: SSC-BACT-0004
+Handle: SSC
 Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: BACT
 Title: Heat Shock of Chemically Competent E. coli Cells
 Description: A method for transforming E. coli with plasmids using heat shock.
 1. Set a PCR machine to hold at 42C to pre-heat.

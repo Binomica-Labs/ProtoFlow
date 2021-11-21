@@ -1,3 +1,9 @@
+Handle: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: PLNT
+Title: How to make a genetically engineered tobacco plant.
+Description: A simple but thoroough tutorial for transfering genes into tobacco tissue in-vitro using Agrobacterium tumefaciens.
 1. Autoclave 500mL of distilled water, tweezers, #11 scalpel handles, self-healing cutting mat and cotton makeup remover pads and place them in laminar flow hood to cool off.
 2. Under laminar flow, remove a 10mm leaf from sterile culture and place it onto the cutting mat abaxially (bottom side up; lighter green).
 3. With a sterile 6mm biopsy punch, cut leaf disks to the left and right of the mid-rib. Ensure the punch has a complete circle's worth of leaf before you press down to make the cut. Place the first 12 disks onto MSBN media; these will act as your negative control disks whcih will not be exposed to agrobacterium.

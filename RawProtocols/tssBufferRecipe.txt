@@ -1,5 +1,7 @@
-ID: SSC-BACT-0003 
+Handle: SSC 
 Author: Sebastian S. Cocioba 
+Lab: Binomica Labs
+Category: RGNT
 Title: Transformation and Storage Buffer (TSS) Recipe
 Description: A recipe for how to make the chemical transformation buffer for E. coli cells (openwetware.org)
 1. To a sterile 50mL centrifuge tube add 5 grams of PEG 3350 (Miralax).

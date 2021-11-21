@@ -1,5 +1,7 @@
-ID: SSC-BACT-0001 (3 letter author initial)-(kingdom of life)-(numerical ID)
+HANDLE: SSC (3 letter author initial)
 Author: Sebastian S. Cocioba (author name or handle if wish to remain anon)
+Lab: Binomica Labs
+Category: BACT (ex. BACT = bacterial related methods, 4 letter category, see Admin folder for list)
 Title: LB Agar Media Prep (descriptive succinct title of protocol)
 Description: (short description discussing the summary of protocol)
 1. (first line of protocol. one line per step, no extra spaces between steps) [pictureName.jpg] 

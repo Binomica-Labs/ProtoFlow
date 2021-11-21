@@ -1,3 +1,9 @@
+Handle: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: PLNT
+Title: Sowing Tobacco Seeds In-Vitro
+Description: A way to surface sterilize and sow tobacco seeds in sterile media for later use in plant tissue culture and genetic engineering experiments.
 1. Melt MS Agar in the microwave and pour into a few petri dishes. Let them set under laminar flow, cap, set upside down neatly in a stack.
 2. To a sheet of paper towel, apply a light misting of 70% Isopropanol abd plsce it under laminar flow.
 3. Sprinkle a poppyseed muffin top's worth of seeds onto the center or the damp paper towel. You don't need a ton of seeds, just be sure to disperse them evenly in about a 100mm circle.
