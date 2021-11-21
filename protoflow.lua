@@ -79,6 +79,8 @@ if arg[1] == "listusers" then
 	users.getUsers()
 end
 
+
+--works as of 11-21-21
 if arg[1] == "listcats" then
 
 	catFile = io.open("Admin/categories.txt", "r")
@@ -92,8 +94,12 @@ if arg[1] == "listcats" then
 		return
 	end
 	io.write("I found some cats!\n")
+	local categories = catFile:read("*a")
+	io.write(categories)
 	catFile:close()
 end
+
+
 
 if arg[1] == "newuser" then
 	activeUsers = users.newUser()	
