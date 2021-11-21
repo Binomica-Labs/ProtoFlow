@@ -34,6 +34,7 @@ end
 
 if arg[1] == "newprotocol" then
 	local activeUsers = {}
+	local currentChoice = ""
 	os.execute("clear")
 	io.write("What's your user handle? ")
 	local handle = string.upper(io.read())
@@ -72,7 +73,38 @@ if arg[1] == "newprotocol" then
 		print("Author: " .. activeUsers[handle].userName)
 		print("Title: " .. currentTitle)
 		print("Description: " .. currentDescription .. "\n")
-		print("Is this correct? ")
+		io.write("Is this correct? Type in yes or no: ")
+		local reply = string.upper(io.read())
+		::editDetails::
+		if reply == "YES" then
+			--continue
+		elseif reply == "NO" then
+			print("Which section would you like to change? Please choose a letter for (H)andle, (A)uthor, (T)itle, or (D)escription: ") 
+			
+			currentChoice = string.upper(io.read())
+			if currentChoice == "H" then
+				print("What shall your new handle be?")
+				handle = io.read()
+				print("Alright, your new protocol's corrected handle is " .. handle)
+			elseif	currentChoice == "A" then
+				print("What shall your protocol's new Author Name be?")
+				local currentUsername = io.read()
+				print("Alright, your new protocol's corrected Author Name is " .. currentUsername)
+			elseif	currentChoice == "T" then
+				print("What shall your protocol's new Title be?")
+				local currentTitle = io.read()
+				print("Alright, your new protocol's corrected title is " .. currentTitle)
+			elseif	currentChoice == "D" then
+				print("What shall your protocol's new Description be?")
+				local currentDescription = io.read()
+				print("Alright, your new protocol's corrected Author Name is " .. currentDescription)
+			else
+				print("Please type in a letter corresponding to either (H)andle, (A)uthor, (T)itle, or (D)escription: ")
+				goto editDetails			
+			end		
+		else
+			
+		end
 		end
 	
 end
