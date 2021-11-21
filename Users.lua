@@ -1,6 +1,5 @@
 local Users = {}
 local userList = {}
-local users = {}
 
 function split(inputstr, sep) 
 	sep = sep or '%s' 
@@ -23,7 +22,7 @@ end
 
 
 
-function Users:newUser(activeUserList)
+function Users:newUser()
 	local userName = ""
 	os.execute("clear")
 	io.write("Hello and welcome! What's would you like your user handle to be?\n")
@@ -69,14 +68,14 @@ function Users:newUser(activeUserList)
 		else
 			io.write("Welcome back, " .. userList[handle].user .."!")
 		end
-	else print("Please type in a User Name!\n")
+	else print("Please type in a valid user handle!\n")
 	end
 end
 
 
 
-function Users:getUsers(userList)
-
+function Users:getUsers()
+	local userTable = {}
 	local rawUserList = io.open("Admin/users.txt", "r+")
 	
 		if not rawUserList then
@@ -94,15 +93,15 @@ function Users:getUsers(userList)
 		local currentUserName = currentUserInfo[2]
 		local currentUserHandle = currentUserInfo[1]
 
-		users[currentUserName] = {userName = currentUserName, 
+		userTable[currentUserHandle] = {userName = currentUserName, 
 								 userHandle = currentUserHandle}
 
-		print("User name: " .. users[currentUserName].userName)
-		print("User Handle: " .. users[currentUserName].userHandle)
+		print("User name: " .. userTable[currentUserHandle].userName)
+		print("User Handle: " .. userTable[currentUserHandle].userHandle)
 		print("************************")
 	end
-		print("end of users list")
-	return users
+	rawUserList:close()
+	return userTable
 end
 
 return Users

@@ -31,6 +31,54 @@ end
 
 
 
+
+if arg[1] == "newprotocol" then
+	local activeUsers = {}
+	local testHandle = "SSC"
+	os.execute("clear")
+	io.write("What's your user handle? ")
+	local handle = string.upper(io.read())
+	print("Getting user list...\n")
+	activeUsers = users:getUsers()
+
+	if not activeUsers[handle] then
+		print("User not found! User command listusers or read above to see if your user name is there.\n")
+	else 
+		print("Welcome back, ".. activeUsers[handle].userName .."!\n")
+		print("Choose a category for your new protocol using the list below:\n")
+		local catFile = io.open("Admin/categories.txt", "r")
+
+		if not catFile then
+			print("")
+			print("")
+			print("Error: could not open file; check file name and path!")
+			print("")
+			print("")
+		return
+		end
+		local categories = catFile:read("*a")
+		io.write(categories)
+		catFile:close()
+		print("Please type in the 4 letter category code that best fits your protocol: ")
+		local currentCategory = string.upper(io.read())
+		print("Alright, your new protocol's category is " .. currentCategory .. ". Now tell me the title of your protocol, please.\n")
+		print("Type in a short but descriptive title here: ")
+		local currentTitle = io.read()
+		print("Got it. Your new protocol's title is " .. currentTitle .. ". Now onto the description!\n")
+		print("Please type in a more thorough description of the protocol, it's purpose, etc: ")
+		local currentDescription = io.read()
+		print("Sounds good. Here's what I got so far:\n")
+		print("Handle: " .. handle .. "\n")
+		print("Author: " .. activeUsers[handle].userName .. "\n")
+		print("Title: " .. currentTitle .. "\n")
+		print("Description: " .. currentDescription .. "\n")
+		print("Is this correct? ")
+		end
+	
+end
+
+
+
 if arg[1] == "format" then
 --set file logic and catch loading errors
 	if not arg[2] then 
@@ -100,7 +148,9 @@ if arg[1] == "listcats" then
 end
 
 
-
+--works as of 11-20-21
 if arg[1] == "newuser" then
 	activeUsers = users.newUser()	
 end
+
+
