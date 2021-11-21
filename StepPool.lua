@@ -1,6 +1,6 @@
 local StepPool = {}
 
-local pool = {)
+local pool = {}
 pool.userHandle = ""
 pool.protocolNumber = ""
 pool.stepNumber = ""
