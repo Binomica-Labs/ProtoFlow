@@ -34,7 +34,6 @@ end
 
 if arg[1] == "newprotocol" then
 	local activeUsers = {}
-	local testHandle = "SSC"
 	os.execute("clear")
 	io.write("What's your user handle? ")
 	local handle = string.upper(io.read())
@@ -61,16 +60,17 @@ if arg[1] == "newprotocol" then
 		catFile:close()
 		print("Please type in the 4 letter category code that best fits your protocol: ")
 		local currentCategory = string.upper(io.read())
-		print("Alright, your new protocol's category is " .. currentCategory .. ". Now tell me the title of your protocol, please.\n")
+		print("Alright, your new protocol's category is " .. currentCategory .. ". Now, please tell me the title of your protocol.")
 		print("Type in a short but descriptive title here: ")
 		local currentTitle = io.read()
-		print("Got it. Your new protocol's title is " .. currentTitle .. ". Now onto the description!\n")
-		print("Please type in a more thorough description of the protocol, it's purpose, etc: ")
+		print("Got it. Your new protocol's title is " .. currentTitle .. ". Onto the description!")
+		print("Please type in a more thorough description of the protocol, its purpose, etc: ")
 		local currentDescription = io.read()
-		print("Sounds good. Here's what I got so far:\n")
-		print("Handle: " .. handle .. "\n")
-		print("Author: " .. activeUsers[handle].userName .. "\n")
-		print("Title: " .. currentTitle .. "\n")
+		os.execute("clear")
+		print("Sounds good. Here's what I got so far:")
+		print("Handle: " .. handle)
+		print("Author: " .. activeUsers[handle].userName)
+		print("Title: " .. currentTitle)
 		print("Description: " .. currentDescription .. "\n")
 		print("Is this correct? ")
 		end
