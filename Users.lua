@@ -15,19 +15,52 @@ function split(inputstr, sep)
 	end 
 end
 
+local function Set(list)
+		local set = {}
+		for _, l in ipairs(list) do set[1] = true end
+		return set
+end
 
 
-function Users:newUser()
+
+function Users:newUser(activeUserList)
 	os.execute("clear")
-	io.write("Hello and welcome, new user! What's your name? ")
-	local userName = io.read()
-	if userName ~= "" then
-		io.write("Nice to meet you, " .. userName .. "!" .."\n")
-		io.write("What's your 3 letter author handle? ")
-		local userHandle = string.upper(io.read())
-		io.write("Saving your user name and handle to file!\n")
-		rawUserList:write(userName .. "/" .. userHandle .. "\n")
-		rawUserList:close()
+	io.write("Hello and welcome! What's your user handle? ")
+	local handle = string.upper(io.read())
+	if handle ~= "" then
+
+		local rawUserList = io.open("Admin/users.txt", "r+")
+	
+		if not rawUserList then
+			print("")
+			print("")
+			print("Error: could not open user list; check file name and path!")
+			print("")
+			print("")
+			return
+		end
+	
+	for line in rawUserList:lines() do
+		local currentUserInfo = {}
+		currentUserInfo = split(line, "/")
+		local currentUserName = currentUserInfo[2]
+		local currentUserHandle = currentUserInfo[1]
+
+		users[currentUserName] = {user = currentUserName, 
+								 userHandle = currentUserHandle}
+	end
+
+		--BROKEN LOGIC
+		if not users[handle] then
+			io.write("Nice to meet you, " .. handle  .. "!" .."\n")
+			io.write("What's your human name? ")
+			local userName = io.read()
+			io.write("Saving your user name and handle to file!\n")
+			rawUserList:write(handle .. "/" .. userName .. "\n")
+			rawUserList:close()
+		else
+			io.write("Welcome back, " .. users[userHandle].userName .."!")
+		end
 	else print("Please type in a User Name!\n")
 	end
 end
@@ -61,7 +94,7 @@ function Users:getUsers(userList)
 		print("************************")
 	end
 		print("end of users list")
-
+	return users
 end
 
 return Users

@@ -82,5 +82,5 @@ end
 
 
 if arg[1] == "newuser" then
-	users.newUser()
+	activeUsers = users.newUser()	
 end
