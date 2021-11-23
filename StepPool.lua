@@ -2,8 +2,20 @@ local StepPool = {}
 
 local pool = {}
 pool.userHandle = ""
+pool.userName = ""
+pool.userLab = ""
+pool.protocolCategory = ""
+pool.protocolTitle = ""
+pool.protocolDescription = ""
 pool.protocolNumber = ""
 pool.stepNumber = ""
+pool.stepTime = ""
+pool.mediaBool = ""
+pool.stepData = ""
+
+--pool["SSC-001-001"].userHandle = "SSC"
+--pool["SSC-001-023"].stepNumber = "23"
+
 local function fileExists(fileName)
 	local f = io.open(fileName, "r")
 	if f ~= nil then io.close(f)
@@ -11,6 +23,23 @@ local function fileExists(fileName)
 	else
 	return false
 	end
+end
+
+
+
+function string:split(delimiter)
+    local result = {}
+    local from = 1
+    local delim_from, delim_to = string.find(self, delimiter, from, true)
+    while delim_from do
+        if (delim_from ~= 1) then
+            table.insert(result, string.sub(self, from, delim_from-1))
+        end
+   	    from = delim_to + 1
+        delim_from, delim_to = string.find(self, delimiter, from, true)
+    end
+    if (from <= #self) then table.insert(result, string.sub(self, from)) end
+    return result
 end
 
 
@@ -40,7 +69,34 @@ end
 
 
 
-local function formatStep(rawStepID, rawStep, timeNeeded)
+--works as of 11-22-21
+local function parseRawProtocol(rawProtFilePath)
+	local polishedProtocol = {}
+	local counter = 1
+	local rawFile = io.open(rawProtFilePath, "r+")
+	local rawFileLines = rawFile:lines()
+	for line in rawFile:lines() do
+		local rawLines = {}
+		rawLines = line:split(": ")
+
+		if counter <= 6 then
+			polishedProtocol[counter] = rawLines[2]
+				--print(polishedProtocol[counter])
+		else
+			polishedProtocol[counter] = rawLines[1]
+				--print(polishedProtocol[counter])
+		end
+		
+		counter = counter + 1
+	end	
+
+	rawFile:close()
+	return polishedProtocol
+end
+
+
+
+local function stepGen(rawStepID, rawStep, timeNeeded)
 		--SSC	001 	001		600		"Spin down cells at 4500rpm for 10 minutes"
 		local IDtab = splitByChunk(rawStepID, 3)
 		local formattedStep = IDtab[1] .. "\t" .. --"SSC" user handle
@@ -102,13 +158,19 @@ function StepPool:addStep(stepID, step, timeNeeded, v)
 	end	
 end
 
+
+
 function StepPool:removeStep()
 
 end
 
+
+
 function StepPool:addProtocol()
 
 end
+
+
 
 function StepPool:removeProtocol()
 

@@ -52,7 +52,7 @@ function Users:newUser()
 								 userHandle = currentUserHandle}
 	end
 
-		--BROKEN LOGIC
+		
 		if not userList[handle] then
 			io.write("Nice to meet you, " .. handle  .. "!" .."\n")
 			io.write("What's your human name?\n")
