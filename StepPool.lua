@@ -78,7 +78,7 @@ local function parseRawProtocol(rawProtFilePath)
 	for line in rawFile:lines() do
 		local rawLines = {}
 		rawLines = line:split(": ")
-
+		
 		if counter <= 6 then
 			polishedProtocol[counter] = rawLines[2]
 				--print(polishedProtocol[counter])
@@ -91,10 +91,13 @@ local function parseRawProtocol(rawProtFilePath)
 	end	
 
 	rawFile:close()
+	for i = 1, #polishedProtocol do
+		print(polishedProtocol[i])
+	end
 	return polishedProtocol
 end
 
-
+parseRawProtocol("RawProtocols/tobaccoGMO.txt")
 
 local function stepGen(rawStepID, rawStep, timeNeeded)
 		--SSC	001 	001		600		"Spin down cells at 4500rpm for 10 minutes"
