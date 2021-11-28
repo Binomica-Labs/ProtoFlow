@@ -99,7 +99,21 @@ end
 
 parseRawProtocol("RawProtocols/tobaccoGMO.txt")
 
-local function stepGen(rawStepID, rawStep, timeNeeded)
+local function stepGen(protocol)
+
+		local steps = {}
+		local tempHandle = protocol[1]
+		local tempName = protocol[2]
+		local tempLab = protocol[3]
+		local tempProtocolName = protocol[4]
+		local tempProtocolDecription = protocol[5]
+		for i = 6, #protocol do
+			table.insert(protocol[i], steps)
+		end
+		print("last step: " .. step[1])
+
+
+
 		--SSC	001 	001		600		"Spin down cells at 4500rpm for 10 minutes"
 		local IDtab = splitByChunk(rawStepID, 3)
 		local formattedStep = IDtab[1] .. "\t" .. --"SSC" user handle
