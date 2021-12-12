@@ -79,7 +79,7 @@ local function parseRawProtocol(rawProtFilePath)
 		local rawLines = {}
 		rawLines = line:split(": ")
 		
-		if counter <= 6 then
+		if counter <= 5 then
 			polishedProtocol[counter] = rawLines[2]
 				--print(polishedProtocol[counter])
 		else
@@ -92,38 +92,49 @@ local function parseRawProtocol(rawProtFilePath)
 
 	rawFile:close()
 	for i = 1, #polishedProtocol do
-		print(polishedProtocol[i])
+		print("POLISHED PROT: " .. polishedProtocol[i])
 	end
 	return polishedProtocol
 end
 
-parseRawProtocol("RawProtocols/tobaccoGMO.txt")
+
 
 local function stepGen(protocol)
 
-		local steps = {}
+		local tempSteps = {}
+		local formattedSteps = {}
 		local tempHandle = protocol[1]
 		local tempName = protocol[2]
 		local tempLab = protocol[3]
 		local tempProtocolName = protocol[4]
 		local tempProtocolDecription = protocol[5]
+		
 		for i = 6, #protocol do
-			table.insert(protocol[i], steps)
+			
+			tempSteps[(i-5)] = protocol[i]
 		end
-		print("last step: " .. step[1])
-
-
-
+		print("***")
+		print("LAST STEPS: " .. tempSteps[#tempSteps])
+		print("***")
 		--SSC	001 	001		600		"Spin down cells at 4500rpm for 10 minutes"
-		local IDtab = splitByChunk(rawStepID, 3)
-		local formattedStep = IDtab[1] .. "\t" .. --"SSC" user handle
-							  IDtab[2] .. "\t" .. --"001" protocol number
-							  IDtab[3] .. "\t" .. --"001" step number
-							  timeNeeded  .. "\t" .. --"600" time os step in seconds
-							  rawStep .. "\n" --"Spin down cells at 4500rpm for 10 minutes" step data			
-	return formattedStep
+		--local IDtab = splitByChunk(rawStepID, 3)
+		for i = 1, #tempSteps do
+		
+		formattedSteps[i] = tempHandle .. "\t" .. --"SSC" user handle
+							  tempName .. "\t" .. --"001" protocol number
+							  tempLab .. "\t" .. --"001" step number
+							  tempProtocolName .. "\t" .. --"600" time os step in seconds
+							  tempProtocolDecription .. "\t" ..	
+							  tempSteps[i] .. "\n" --"Spin down cells at 4500rpm for 10 minutes" step data	
+		end
+		print("***")
+		print("FORMATTED STEPS: " .. formattedSteps[1])
+		print("***")		
+	return formattedSteps
 end
 
+--CURRENT DEBUGGING PARAMETER 12-11-21
+stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
 
 
 local function checkHandle(userHandle, userList)
