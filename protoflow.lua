@@ -10,8 +10,8 @@
 
 --functions
 local users = require("Users")
-local format = require("Format")
-local generator = require("Generator")
+--local format = require("Format")
+--local generator = require("Generator")
 local pool = require("StepPool")
 
 
@@ -110,7 +110,7 @@ if arg[1] == "newprotocol" then
 end
 
 
-
+--[[
 if arg[1] == "format" then
 --set file logic and catch loading errors
 	if not arg[2] then 
@@ -136,7 +136,7 @@ if arg[1] == "format" then
 		format.formatProtocol(fileToFormat)
 end
 
-
+]]--
 
 if arg[1] == "compile" then
 --set file logic and catch loading errors

@@ -47,9 +47,11 @@ function Users:newUser()
 		currentUserInfo = split(line, "/")
 		local currentUserName = currentUserInfo[2]
 		local currentUserHandle = currentUserInfo[1]
-
+		local currentUserProtocolCount = currentUserInfo[3]
+		
 		userList[currentUserHandle] = {user = currentUserName, 
-								 userHandle = currentUserHandle}
+								 userHandle = currentUserHandle,
+								 userProtocolCount = currentUserProtocolCount}
 	end
 
 		
@@ -60,7 +62,7 @@ function Users:newUser()
 			io.write("Please type in a name and hit enter: ")
 		    userName = io.read()
 			io.write("Saving your user name and handle to file!\n")
-			rawUserList:write(handle .. "/" .. userName .. "\n")
+			rawUserList:write(handle .. "/" .. userName .. "/" .. 0 .. "\n")
 			io.write("New user " .. userName .." with the handle " .. handle .. " has been added to the list!\n")
 			io.write("Please check to see if your name is on the list by using the listusers command.\n")
 		
@@ -92,12 +94,15 @@ function Users:getUsers()
 		currentUserInfo = split(line, "/")
 		local currentUserName = currentUserInfo[2]
 		local currentUserHandle = currentUserInfo[1]
+		local currentUserProtocolCount = currentUserInfo[3]
 
 		userTable[currentUserHandle] = {userName = currentUserName, 
-								 userHandle = currentUserHandle}
+								 userHandle = currentUserHandle,
+								 userProtocolCount = currentUserProtocolCount}
 
 		print("User name: " .. userTable[currentUserHandle].userName)
 		print("User Handle: " .. userTable[currentUserHandle].userHandle)
+		print("User Protocol Count: " .. userTable[currentUserHandle.userProtocolCount])
 		print("************************")
 	end
 	rawUserList:close()

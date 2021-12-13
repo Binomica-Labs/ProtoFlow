@@ -69,7 +69,6 @@ end
 
 
 
---works as of 11-22-21
 local function parseRawProtocol(rawProtFilePath)
 	local polishedProtocol = {}
 	local counter = 1
@@ -81,56 +80,126 @@ local function parseRawProtocol(rawProtFilePath)
 		
 		if counter <= 5 then
 			polishedProtocol[counter] = rawLines[2]
-				--print(polishedProtocol[counter])
 		else
 			polishedProtocol[counter] = rawLines[1]
-				--print(polishedProtocol[counter])
 		end
 		
 		counter = counter + 1
 	end	
 
 	rawFile:close()
-	for i = 1, #polishedProtocol do
-		print("POLISHED PROT: " .. polishedProtocol[i])
-	end
 	return polishedProtocol
 end
 
 
 
-local function stepGen(protocol)
+local function countProtocols(inputHandle)
+	local userList = {}
+	local protocolCount = 0;
 
+	local rawUserList = io.open("Admin/users.txt", "r+")
+		
+		if not rawUserList then
+			print("")
+			print("")
+			print("Error: could not open user list; check file name and path!")
+			print("")
+			print("")
+			return
+		end
+			
+	for line in rawUserList:lines() do
+			local currentUserInfo = {}
+			currentUserInfo = split(line, "/")
+			local currentUserName = currentUserInfo[2]
+			local currentUserHandle = currentUserInfo[1]
+			local currentUserProtocolCount = currentUserInfo[3]
+			
+			userList[currentUserHandle] = {user = currentUserName, 
+					  					 userHandle = currentUserHandle,
+										 userProtocolCount = currentUserProtocolCount}
+	end
+
+	protocolCount = userList[inputHandle].userProtocolCount
+	rawUserList:close()
+	return protocolCount
+end
+
+local function count(base, pattern)
+	return select(2, string.gsub(base, pattern, ""))
+end
+
+local function stepGen(protocol)
+		local poolString = ""
+		local tempStepNumber = 0
+		local tempStepID = ""
 		local tempSteps = {}
-		local formattedSteps = {}
+		local TSVsteps = {}
 		local tempHandle = protocol[1]
 		local tempName = protocol[2]
 		local tempLab = protocol[3]
 		local tempProtocolName = protocol[4]
 		local tempProtocolDecription = protocol[5]
 		
+		--add protocol number generator code here or call function here
+		local tempProtocolNumber = countProtocols(tempHandle) + 1 --append protocol count
+
+				
 		for i = 6, #protocol do
 			
 			tempSteps[(i-5)] = protocol[i]
 		end
-		print("***")
-		print("LAST STEPS: " .. tempSteps[#tempSteps])
-		print("***")
-		--SSC	001 	001		600		"Spin down cells at 4500rpm for 10 minutes"
-		--local IDtab = splitByChunk(rawStepID, 3)
-		for i = 1, #tempSteps do
 		
-		formattedSteps[i] = tempHandle .. "\t" .. --"SSC" user handle
-							  tempName .. "\t" .. --"001" protocol number
-							  tempLab .. "\t" .. --"001" step number
-							  tempProtocolName .. "\t" .. --"600" time os step in seconds
-							  tempProtocolDecription .. "\t" ..	
-							  tempSteps[i] .. "\n" --"Spin down cells at 4500rpm for 10 minutes" step data	
+		for i = 1, #tempSteps do
+			tempStepNumber = i
+			tempStepID = tempHandle .. "-" .. tempProtocolNumber .. "-" .. tempStepNumber
+			
+			TSVsteps[i] = tempStepID .. "\t" .. 
+						  tempHandle .. "\t" .. -- user handle
+						  tempName .. "\t" .. --user name
+						  tempLab .. "\t" .. --lab name
+						  tempProtocolNumber .. "\t" .. --protocol number
+						  tempProtocolName .. "\t" .. --protocol name
+						  tempProtocolDecription .. "\t" ..	--protocol description
+					  	  tempStepNumber .. "\t" ..
+					 	  tempSteps[i] .. "\n" --actual step instructions	
+			
+			local tsvPool = io.open("Admin/pool.tsv", "a+")		--a+ opens file in append mode
+		
+			if not tsvPool then
+				print("")
+				print("")
+				print("Error: could not main step pool; check file name and path!")
+				print("")
+				print("")
+				return
+			end
+			
+			poolString = tsvPool:read("*all")
+			
+			print(poolString)
+			print("STEP ID: " .. tempStepID)
+			print("POOL STRING LENGTH: " .. string.len(poolString))
+			--print("POOL STRING: " .. poolString)
+			--print("STRING MATCH: " .. string.find(poolString, tempStepID))				
+			if string.match(poolString, tempStepID) then
+				print("ERROR: DUPLICATE STEP")			
+			else
+				print("NO DUPLICATE DETECTED!")
+				tsvPool:write(TSVsteps[i]) --needs to be a check to make sure no replicates
+			end
+			
+			tsvPool:close()
 		end
+			
+		
 		print("***")
-		print("FORMATTED STEPS: " .. formattedSteps[1])
-		print("***")		
-	return formattedSteps
+		print("LAST TSV STEP: " .. TSVsteps[#TSVsteps])
+		print("***")
+
+		
+				
+	return TSVsteps
 end
 
 --CURRENT DEBUGGING PARAMETER 12-11-21
