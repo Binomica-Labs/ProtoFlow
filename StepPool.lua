@@ -97,7 +97,7 @@ local function countProtocols(inputHandle)
 	local userList = {}
 	local protocolCount = 0;
 
-	local rawUserList = io.open("Admin/users.txt", "r+")
+	local rawUserList = io.open("Admin/users.txt", "a+")
 		
 		if not rawUserList then
 			print("")
@@ -125,26 +125,29 @@ local function countProtocols(inputHandle)
 	return protocolCount
 end
 
+
+
 local function count(base, pattern)
 	return select(2, string.gsub(base, pattern, ""))
 end
 
+
+
 local function stepGen(protocol)
-		local poolString = ""
 		local tempStepNumber = 0
 		local tempStepID = ""
 		local tempSteps = {}
 		local TSVsteps = {}
+		local tempPool = {}
 		local tempHandle = protocol[1]
 		local tempName = protocol[2]
 		local tempLab = protocol[3]
 		local tempProtocolName = protocol[4]
 		local tempProtocolDecription = protocol[5]
-		
+
 		--add protocol number generator code here or call function here
 		local tempProtocolNumber = countProtocols(tempHandle) + 1 --append protocol count
-
-				
+		
 		for i = 6, #protocol do
 			
 			tempSteps[(i-5)] = protocol[i]
@@ -175,36 +178,31 @@ local function stepGen(protocol)
 				return
 			end
 			
-			poolString = tsvPool:read("*all")
-			
-			print(poolString)
-			print("STEP ID: " .. tempStepID)
-			print("POOL STRING LENGTH: " .. string.len(poolString))
-			--print("POOL STRING: " .. poolString)
-			--print("STRING MATCH: " .. string.find(poolString, tempStepID))				
-			if string.match(poolString, tempStepID) then
-				print("ERROR: DUPLICATE STEP")			
-			else
-				print("NO DUPLICATE DETECTED!")
-				tsvPool:write(TSVsteps[i]) --needs to be a check to make sure no replicates
-			end
-			
+			local poolString = tsvPool:read("*all")
+			--tempPool = tsvPool:lines()
 			tsvPool:close()
+						
+			print("TEMP POOL 1:" .. tempPool[1])
+			for step in tempPool do
+				if string.match(step, tempStepID) then
+					print("ERROR: DUPLICATE STEP")			
+				else
+					print("NO DUPLICATE DETECTED!")
+					tsvPool:write(TSVsteps[i]) --needs to be a check to make sure no replicates
+				end
+			end
+				tsvPool:close()
 		end
-			
 		
 		print("***")
 		print("LAST TSV STEP: " .. TSVsteps[#TSVsteps])
 		print("***")
-
-		
 				
 	return TSVsteps
 end
 
 --CURRENT DEBUGGING PARAMETER 12-11-21
 stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
-
 
 local function checkHandle(userHandle, userList)
 	if fileExists("Admin/users.txt") ~= true then
@@ -258,13 +256,13 @@ end
 
 
 function StepPool:removeStep()
-
+	
 end
 
 
 
 function StepPool:addProtocol()
-
+	
 end
 
 
@@ -276,4 +274,5 @@ end
 
 
 return StepPool
+
 end

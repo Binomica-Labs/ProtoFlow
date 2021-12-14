@@ -184,5 +184,3 @@ end
 if arg[1] == "newuser" then
 	activeUsers = users.newUser()	
 end
-
-
