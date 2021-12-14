@@ -1,0 +1,18 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: Columnless Miniprep Protocol
+Description: A simple method for isolating plasmid DNA from bacterial cultures without silica columns or harsh reagents.
+1. Grow a single colony of your plasmid carrying E. coli strain in a small volume of LB + appropriate antibiotics overnight shaken at 37C.
+2. The next day, spin down 1mL of bacterial culture in a 1.5mL tube at maximum speed for 1 minute.
+3. Remove the supernatant carefully and respend the cells in 100uL of Resuspension Buffer.
+4. Add 100uL of Lysis Buffer. Invert 10x. Incubate at room temp for 2 mins.
+5. Add 120uL of Neutralization Buffer. Invert 10x. Incubate at room tmep for 2 mins.
+6. Spind down tube at maximum speed (~10kG or 14krpm) for 10 minutes.
+7. Carefully decant the supernatant into a new tube. Avoid picking up any cellular debris. Go slow and use smaller pipette tips if need be.
+8. Add 200uL of Isopropanol 100%. Vortex for 10 seconds. Spin down at maximum speed for 10 mins.
+9. Decant the isoporpanol and add 500uL of Ethanol 70%. Vortex. Spin max speed 5 mins.
+10. Decant the enthanol carefully and spin down tube again at max speed for 3 minutes to pull residual ethanol from pellet.
+11. Remove any residual ethanol with a 10uL pipette tip until no liquid remains visible. Air dry the tube at room temp for 10 minutes.
+12. Resuspend plasmid DNA in sterile DH2O and measure concentration and/or run a sample on a gel to determine quality of isolation.
