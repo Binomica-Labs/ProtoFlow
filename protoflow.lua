@@ -12,11 +12,14 @@
 local users = require("Users")
 --local format = require("Format")
 --local generator = require("Generator")
-local pool = require("StepPool")
+local steppool = require("StepPool")
+
+
 
 --handle passed arguments for later use 
 if #arg < 1 then
 	os.execute("clear")
+
 	print("")
 	print("ProtoFlow v1.0 - CLI Bioprotocol Designer")
 	print("----------------------------------------------------------------------------")
@@ -101,10 +104,9 @@ if arg[1] == "newprotocol" then
 				print("Please type in a letter corresponding to either (H)andle, (A)uthor, (T)itle, or (D)escription: ")
 				goto editDetails			
 			end		
-		else
-			
+		else	
 		end
-		end
+	end
 	
 end
 
@@ -155,7 +157,7 @@ end
 
 --works as of 11-20-21
 if arg[1] == "listusers" then
-	users.getUsers()
+	users:getUsers()
 end
 
 
@@ -181,5 +183,10 @@ end
 
 --works as of 11-20-21
 if arg[1] == "newuser" then
-	activeUsers = users.newUser()	
+	activeUsers = users:newUser()	
+end
+
+
+if arg[1] == "test" then
+	activePool = steppool:initPool()	
 end

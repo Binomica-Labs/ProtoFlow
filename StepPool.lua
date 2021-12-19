@@ -1,5 +1,5 @@
 local StepPool = {}
-
+print("StepPool LIBRARY LOADED")
 local md5 = require("md5")
 
 local pool = {}
@@ -60,6 +60,48 @@ end
 
 
 
+local function loadPoolFromFile(poolFile)
+	pool = {}
+	stepTable = {}
+	local poolStep = ""
+	local tsvPool = io.open(poolFile, "r")
+	for line in tsvPool:lines() do
+		print("ADDING TO stepTable")
+		stepTable = splitBySep(line, "\t")
+		print("STEP TABLE 1: " .. stepTable[1])
+
+			local tempHandle = stepTable[1]
+			local tempName = stepTable[2]
+			local tempLab = stepTable[3]
+			local tempProtCategory = stepTable[4]
+			local tempProtocolName = stepTable[5]
+			local tempProtocolDescription = stepTable[6]
+			local tempProtocolNumber = stepTable[7]
+			local tempStepNumber = stepTable[8]
+			local tempStepTime = stepTable[9]
+			local tempMediaBool = stepTable[10]
+			local tempStepData = stepTable[11]
+			local tempStepID = tempHandle .. "-" .. tempProtocolNumber .. "-" .. tempStepNumber
+
+			pool[tempStepID] = {userHandle = tempHandle,
+				userName = tempName, 
+				userLab = tempLab,
+				protocolCategory = tempProtCategory,
+				protocolTitle = tempProtocolName,
+				protocolDescription = tempProtocolDescription,
+				protocolNumber = tempProtocolNumber,
+				stepNumber = tempStepNumber,
+				stepTime = tempStepTime,
+				mediaBool = tempMediaBool,
+				stepData = tempStepData}
+				print(pool[tempStepID].stepNumber)
+	end
+	tsvPool:close()
+	return pool
+end
+
+
+
 local function parseRawProtocol(rawProtFilePath)
 	local polishedProtocol = {}
 	local counter = 1
@@ -81,6 +123,7 @@ local function parseRawProtocol(rawProtFilePath)
 	rawFile:close()
 	return polishedProtocol
 end
+
 
 
 local function countProtocols(inputHandle)
@@ -120,6 +163,35 @@ end
 local function count(base, pattern)
 	return select(2, string.gsub(base, pattern, ""))
 end
+
+
+
+local function savePoolToFile()
+	local TSVtable = {}
+	local count = 0
+	for _ in pairs(pool) do
+		count = count + 1
+		TSVtable[count] = pool[_].userHandle .. "\t" ..
+						  pool[_].userName .. "\t" ..
+						  pool[_].userLab .. "\t" ..
+						  pool[_].protocolCategory .. "\t" ..
+						  pool[_].protocolTitle .. "\t" ..
+						  pool[_].protocolDescription .. "\t" ..
+						  pool[_].protocolNumber .. "\t" ..
+						  pool[_].stepNumber .. "\t" ..
+						  pool[_].stepTime .. "\t" ..
+						  pool[_].mediaBool .. "\t" ..
+						  pool[_].stepData .. "\n"
+	end
+
+	for i = 1, count do
+			  print("SAVING POOL TO FILE")
+		local tsvPool = io.open("Admin/pool.tsv", "a+")
+			  tsvPool:write(TSVtable[i])
+			  tsvPool:close() 
+	end
+end
+
 
 
 local function stepGen(protocol)
@@ -172,18 +244,28 @@ local function stepGen(protocol)
 		end
 			
 		local tsvPool = io.open("Admin/pool.tsv")
-		local poolString = tsvPool:read("*all")
-		table.sort(pool)	
+		local poolString = tsvPool:read("*all")	
+		tsvPool:close()
 		for k in pairs(pool) do 
-			--DO STUFF HERE
+			if string.find(poolString, k) ~= nil then
+				print("DUPS FOUND!!!")
+			else
+				print("NO DUPS")
+			end
 		end
-
+		
 	return TSVsteps
-end--HERE
+end
 
 
-	--CURRENT DEBUGGING PARAMETER 12-11-21
-	stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
+
+
+
+local function testStuff()
+stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
+--pool = loadPoolFromFile("Admin/pool.tsv")
+--savePoolToFile()
+end
 
 
 
@@ -221,10 +303,11 @@ function StepPool:addStep(stepID, step, timeNeeded, v)
 
 			else print("Please type in a User Name!\n")
 			end
-	end		
-	if pool[stepID] ~= nil then
-		local step = formatStep(stepID, step, timeNeeded)
-		table.insert(pool, step)
+		end		
+		if pool[stepID] ~= nil then
+			local step = formatStep(stepID, step, timeNeeded)
+			table.insert(pool, step)
+		end
 	end	
 end
 
@@ -240,10 +323,12 @@ function StepPool:removeProtocol()
 
 end
 
-function StepPool:initializePool()
-	
+function StepPool:initPool()
+		testStuff()
+	print("POOL LOADED")
+	local snapBack = "POOL LOADED"	
+	--loadPoolFromFile("TestFiles/testPool.tsv")	
+	return snapBack
 end
 
 return StepPool
-
-end

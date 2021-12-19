@@ -92,9 +92,11 @@ function Users:getUsers()
 	for line in rawUserList:lines() do
 		local currentUserInfo = {}
 		currentUserInfo = split(line, "/")
+		print("LINE LENGTH: " .. #currentUserInfo)
 		local currentUserName = currentUserInfo[2]
 		local currentUserHandle = currentUserInfo[1]
 		local currentUserProtocolCount = currentUserInfo[3]
+		print("CURRENT PROT COUNT: " .. currentUserInfo[3])
 
 		userTable[currentUserHandle] = {userName = currentUserName, 
 								 userHandle = currentUserHandle,
@@ -102,7 +104,7 @@ function Users:getUsers()
 
 		print("User name: " .. userTable[currentUserHandle].userName)
 		print("User Handle: " .. userTable[currentUserHandle].userHandle)
-		print("User Protocol Count: " .. userTable[currentUserHandle.userProtocolCount])
+		print("User Protocol Count: " .. userTable[currentUserHandle].userProtocolCount)
 		print("************************")
 	end
 	rawUserList:close()
