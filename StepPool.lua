@@ -1,17 +1,8 @@
 local StepPool = {}
 
+local md5 = require("md5")
+
 local pool = {}
-pool.userHandle = ""
-pool.userName = ""
-pool.userLab = ""
-pool.protocolCategory = ""
-pool.protocolTitle = ""
-pool.protocolDescription = ""
-pool.protocolNumber = ""
-pool.stepNumber = ""
-pool.stepTime = ""
-pool.mediaBool = ""
-pool.stepData = ""
 
 --pool["SSC-001-001"].userHandle = "SSC"
 --pool["SSC-001-023"].stepNumber = "23"
@@ -92,7 +83,6 @@ local function parseRawProtocol(rawProtFilePath)
 end
 
 
-
 local function countProtocols(inputHandle)
 	local userList = {}
 	local protocolCount = 0;
@@ -132,18 +122,18 @@ local function count(base, pattern)
 end
 
 
-
 local function stepGen(protocol)
+		local stepList = {}
+		local tempLines = {}
 		local tempStepNumber = 0
 		local tempStepID = ""
 		local tempSteps = {}
 		local TSVsteps = {}
-		local tempPool = {}
 		local tempHandle = protocol[1]
 		local tempName = protocol[2]
 		local tempLab = protocol[3]
 		local tempProtocolName = protocol[4]
-		local tempProtocolDecription = protocol[5]
+		local tempProtocolDescription = protocol[5]
 
 		--add protocol number generator code here or call function here
 		local tempProtocolNumber = countProtocols(tempHandle) + 1 --append protocol count
@@ -156,53 +146,47 @@ local function stepGen(protocol)
 		for i = 1, #tempSteps do
 			tempStepNumber = i
 			tempStepID = tempHandle .. "-" .. tempProtocolNumber .. "-" .. tempStepNumber
-			
+			print(tempStepID)
 			TSVsteps[i] = tempStepID .. "\t" .. 
 						  tempHandle .. "\t" .. -- user handle
 						  tempName .. "\t" .. --user name
 						  tempLab .. "\t" .. --lab name
 						  tempProtocolNumber .. "\t" .. --protocol number
 						  tempProtocolName .. "\t" .. --protocol name
-						  tempProtocolDecription .. "\t" ..	--protocol description
+						  tempProtocolDescription .. "\t" ..	--protocol description
 					  	  tempStepNumber .. "\t" ..
 					 	  tempSteps[i] .. "\n" --actual step instructions	
-			
-			local tsvPool = io.open("Admin/pool.tsv", "a+")		--a+ opens file in append mode
-		
-			if not tsvPool then
-				print("")
-				print("")
-				print("Error: could not main step pool; check file name and path!")
-				print("")
-				print("")
-				return
-			end
-			
-			local poolString = tsvPool:read("*all")
-			--tempPool = tsvPool:lines()
-			tsvPool:close()
-						
-			print("TEMP POOL 1:" .. tempPool[1])
-			for step in tempPool do
-				if string.match(step, tempStepID) then
-					print("ERROR: DUPLICATE STEP")			
-				else
-					print("NO DUPLICATE DETECTED!")
-					tsvPool:write(TSVsteps[i]) --needs to be a check to make sure no replicates
-				end
-			end
-				tsvPool:close()
-		end
-		
-		print("***")
-		print("LAST TSV STEP: " .. TSVsteps[#TSVsteps])
-		print("***")
-				
-	return TSVsteps
-end
 
---CURRENT DEBUGGING PARAMETER 12-11-21
-stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
+				pool[tempStepID] = {userHandle = tempHandle,
+				userName = tempName, 
+				userLab = tempLab,
+				protocolCategory = "@@@@",
+				protocolTitle = tempProtocolName,
+				protocolDescription = tempProtocolDescription,
+				protocolNumber = tempProtocolNumber,
+				stepNumber = tempStepNumber,
+				stepTime = "@@@@",
+				mediaBool = "@@@@",
+				stepData = tempSteps[i]}
+
+		end
+			
+		local tsvPool = io.open("Admin/pool.tsv")
+		local poolString = tsvPool:read("*all")
+		table.sort(pool)	
+		for k in pairs(pool) do 
+			--DO STUFF HERE
+		end
+
+	return TSVsteps
+end--HERE
+
+
+	--CURRENT DEBUGGING PARAMETER 12-11-21
+	stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
+
+
+
 
 local function checkHandle(userHandle, userList)
 	if fileExists("Admin/users.txt") ~= true then
@@ -213,15 +197,6 @@ local function checkHandle(userHandle, userList)
 	if userList[userHandle]~=nil then 
 		return true
 		else return false
-	end
-end
-
-
-
-function StepPool:initializePool()
-	if fileExists("Admin/pool.txt") ~= true then
-		print("Error: Cannot open Step Pool file. Check Admin/pool.txt! \n")
-		return 
 	end
 end
 
@@ -253,25 +228,21 @@ function StepPool:addStep(stepID, step, timeNeeded, v)
 	end	
 end
 
-
-
 function StepPool:removeStep()
 	
 end
-
-
 
 function StepPool:addProtocol()
 	
 end
 
-
-
 function StepPool:removeProtocol()
 
 end
 
-
+function StepPool:initializePool()
+	
+end
 
 return StepPool
 

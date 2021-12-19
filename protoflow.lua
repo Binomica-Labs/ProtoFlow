@@ -14,7 +14,6 @@ local users = require("Users")
 --local generator = require("Generator")
 local pool = require("StepPool")
 
-
 --handle passed arguments for later use 
 if #arg < 1 then
 	os.execute("clear")
