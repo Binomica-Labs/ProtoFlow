@@ -243,12 +243,18 @@ local function stepGen(protocol)
 
 		end
 			
-		local tsvPool = io.open("Admin/pool.tsv")
+		local tsvPool = io.open("TestFiles/testPool.tsv")
 		local poolString = tsvPool:read("*all")	
 		tsvPool:close()
-		for k in pairs(pool) do 
-			if string.find(poolString, k) ~= nil then
+		table.sort(pool)
+		for k in pairs(pool) do
+			print("K: " .. k)
+			print("POOL STRING LENGTH: " .. #poolString) 
+			local dupCount = 0
+			_, dupCount = string.gsub(poolString, "([^"..k.."]*)("..k.."?)", "")
+			if dupCount > 0 then
 				print("DUPS FOUND!!!")
+				print(dupCount)
 			else
 				print("NO DUPS")
 			end
