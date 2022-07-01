@@ -1,5 +1,5 @@
 local StepPool = {}
-print("StepPool LIBRARY LOADED")
+--print("StepPool LIBRARY LOADED")
 local md5 = require("md5")
 
 local pool = {}
@@ -69,21 +69,22 @@ local function loadPoolFromFile(poolFile)
 		print("ADDING TO stepTable")
 		stepTable = splitBySep(line, "\t")
 		print("STEP TABLE 1: " .. stepTable[1])
-
-			local tempHandle = stepTable[1]
-			local tempName = stepTable[2]
-			local tempLab = stepTable[3]
-			local tempProtCategory = stepTable[4]
-			local tempProtocolName = stepTable[5]
-			local tempProtocolDescription = stepTable[6]
-			local tempProtocolNumber = stepTable[7]
-			local tempStepNumber = stepTable[8]
-			local tempStepTime = stepTable[9]
-			local tempMediaBool = stepTable[10]
-			local tempStepData = stepTable[11]
+			
+			local tempHandle = stepTable[2]
+			local tempName = stepTable[3]
+			local tempLab = stepTable[4]
+			local tempProtCategory = stepTable[5]
+			local tempProtocolName = stepTable[6]
+			local tempProtocolDescription = stepTable[7]
+			local tempProtocolNumber = stepTable[8]
+			local tempStepNumber = stepTable[9]
+			local tempStepTime = stepTable[10]
+			local tempMediaBool = stepTable[11]
+			local tempStepData = stepTable[12]
 			local tempStepID = tempHandle .. "-" .. tempProtocolNumber .. "-" .. tempStepNumber
 
-			pool[tempStepID] = {userHandle = tempHandle,
+			pool[tempStepID] = {userstepID = tempStepID,
+				userHandle = tempHandle,
 				userName = tempName, 
 				userLab = tempLab,
 				protocolCategory = tempProtCategory,
@@ -171,7 +172,8 @@ local function savePoolToFile()
 	local count = 0
 	for _ in pairs(pool) do
 		count = count + 1
-		TSVtable[count] = pool[_].userHandle .. "\t" ..
+		TSVtable[count] = pool[_].userStepID .. "\t" ..	
+						  pool[_].userHandle .. "\t" ..
 						  pool[_].userName .. "\t" ..
 						  pool[_].userLab .. "\t" ..
 						  pool[_].protocolCategory .. "\t" ..
@@ -211,7 +213,6 @@ local function stepGen(protocol)
 		local tempProtocolNumber = countProtocols(tempHandle) + 1 --append protocol count
 		
 		for i = 6, #protocol do
-			
 			tempSteps[(i-5)] = protocol[i]
 		end
 		
@@ -229,7 +230,8 @@ local function stepGen(protocol)
 					  	  tempStepNumber .. "\t" ..
 					 	  tempSteps[i] .. "\n" --actual step instructions	
 
-				pool[tempStepID] = {userHandle = tempHandle,
+				pool[tempStepID] = {userstepID = tempStepID,
+				userHandle = tempHandle,
 				userName = tempName, 
 				userLab = tempLab,
 				protocolCategory = "@@@@",
@@ -240,30 +242,40 @@ local function stepGen(protocol)
 				stepTime = "@@@@",
 				mediaBool = "@@@@",
 				stepData = tempSteps[i]}
-
 		end
 			
-		local tsvPool = io.open("TestFiles/testPool.tsv")
-		local poolString = tsvPool:read("*all")	
-		tsvPool:close()
-		table.sort(pool)
-		for k in pairs(pool) do
-			print("K: " .. k)
-			print("POOL STRING LENGTH: " .. #poolString) 
-			local dupCount = 0
-			_, dupCount = string.gsub(poolString, "([^"..k.."]*)("..k.."?)", "")
-			if dupCount > 0 then
-				print("DUPS FOUND!!!")
-				print(dupCount)
-			else
-				print("NO DUPS")
+		local tsvPool = io.open("Admin/pool.tsv", "a+")
+		for line in tsvPool:lines() do
+			for k in pairs(pool) do
+			local tabSplit = {}
+			tabSplit = splitBySep(line, "\t")
+				if #tsvPool:lines() ~= "" then
+					local testID = tabSplit[1]
+					if  testID == k then 
+						print("K: " .. k)
+						print("TEST ID: " .. testID)
+						print("DUPS FOUND!!!")
+						break
+					else
+						print("NO DUPS")
+						tsvPool:write(pool[k].userstepID .. "\t" .. 
+									  pool[k].userHandle .. "\t" ..
+									  pool[k].userName .. "\t" ..
+									  pool[k].userLab .. "\t" ..
+									  pool[k].protocolCategory .. "\t" ..
+									  pool[k].protocolTitle .. "\t" ..
+									  pool[k].protocolDescription .. "\t" ..
+									  pool[k].protocolNumber .. "\t" ..
+									  pool[k].stepNumber .. "\t" ..
+									  pool[k].stepTime .. "\t" ..
+									  pool[k].mediaBool .. "\t" ..
+									  pool[k].stepData .. "\n")
+					end
+				end
 			end
 		end
-		
 	return TSVsteps
 end
-
-
 
 
 
@@ -272,7 +284,6 @@ stepGen(parseRawProtocol("RawProtocols/tobaccoGMO.txt"))
 --pool = loadPoolFromFile("Admin/pool.tsv")
 --savePoolToFile()
 end
-
 
 
 
