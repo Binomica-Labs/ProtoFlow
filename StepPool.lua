@@ -342,9 +342,9 @@ end
 
 function StepPool:initPool()
 		testStuff()
-	print("POOL LOADED")
+	--print("POOL LOADED")
 	local snapBack = "POOL LOADED"	
-	--loadPoolFromFile("TestFiles/testPool.tsv")	
+	loadPoolFromFile("TestFiles/testPool.tsv")	
 	return snapBack
 end
 
