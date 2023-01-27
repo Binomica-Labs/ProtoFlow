@@ -1,0 +1,16 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: Quick and Dirty Agarose Gel Purification
+Description: To extract DNA from agarose gels using the Freeze and Squeeze Method.
+1. Run your agarose gel with your samples and place the gel on your transilluminator once the gel is finished running.
+2. Inspect the gel using the transiluminator and compare the band pattern of each lane to your expected sizes or simulated gel run.
+3. If the gel bands are correct, obtain a sterile #11 scalpel, sterile 1.5mL microcentrifuge tube, and clean tweezers and bring them near the transilluminator.
+4. Using light filter goggles depending on your transilluminator (amber orange goggles for blue light illuminators) or a slab of light filtering colored acrylic, locate the first band you wish to isolate. For cloning runs this is typically the cut backbone plasmid.
+5. Using the scalpel, carefully cut into the perimeter of the gel band as close to the band as possible without cutting into the band itself. This takes practice. Ensure your cutting angle is a straight as possible and perpendicular to the plane of the gel. Try not to drag the blade further than the edge of the DNA band to not carry over any uncut plasmid or contaminating DNA from above or below the target band. Once the last cut is made and the band is free from the gel, you can then cut from an edge of the band to the closest gel slab edge to allwo for easy removal of the band later.
+6. Using another fresh scalpel blade, cut the next band you wish to isolate. Drag the last cut out to the edge of the gel just like in the previous step. Use a fresh scalpel for all remaining target bands. 
+7. Carefully break open the gel at the long cuts to expose the isolated band. With clean tweezers, pick up each band and place them in labeled microcentrifuge tubes. If the samples cannot cross-contaminate, use a different clean tweezer for each sample.
+8. Place the sample tubes containing the agarose plugs into a freezer at -20C and allow to fully freeze for 30mins.
+9. Quickly place the frozen tubes into a microcentrifuge set to maximum speed and allow to spin for 10mins.
+10. Use the supernatant of the spindown for downstream processing. Note the agar plug volume directly contributes to the final elution volume so do try to keep the agar plugs as trim to the bands as possible to avoid dulution.

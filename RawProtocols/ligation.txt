@@ -1,0 +1,14 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: Ligation of Traditionally Cloned DNA Fragments
+Description: To setup an overnight ligation reaction joining traditionally cloned parts to a backbone plasmid.
+1. Thaw T4 DNA Ligase Buffer on ice. Be sure to thaw on ice and not on the bench since the buffer contains ATP and is thermally sensitive. Prechill a PCR machine to 16C.
+1. To a sterile 0.2mL PCR tube, add 17.5uL of cut and gel purified plasmid backbone. Label the tube with enough information to specify it from other ligations if you are running multiple samples.
+2. To the same tube, add 17.5uL of cut and gel purified insert DNA.
+3. Add 4uL of T4 DNA Ligase Buffer to the tube.
+4. Add 1uL of T4 DNA Ligase to the tube. Cap and vortex the tube in 3 pluses of 1 second to mix the contents evenly.
+5. Incubate the tube at 16C in the PCR machine overnight.
+6. Remove the tube from the PCR machine after overnight incubation. This can be anywhere fro 12 to 24hrs but typically a ligation is 16hrs (5pm to 9am the following morning).
+7. Proceed with downstream processing and/or transformation.

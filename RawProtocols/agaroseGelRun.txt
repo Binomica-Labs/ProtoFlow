@@ -1,0 +1,15 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: Agarose DNA Electrophoresis
+Description: How to set up and run an electrophresis experiment.
+1. Take the solidified aragose gel slab out of the casting tray and place it in your electrophoresis tank.
+2. Fill the tank with TAE Running Buffer to the specified volume based on your specific tank manual. Ensure there is enough running buffer to cover the entire agarose gel evenly to a depth of at least 1mm over the top surface of the gel.
+3. Dispense 4uL of NEB 1KB Plus DNA Ladder into the leftmost well by hovering a loaded pipette tip just above the well opening while submerged in the running buffer. Try not to lean on either side of the well's edges to not deform the shape of the well which will impact the sharpenss of your gel bands. The loading dye in the ladder solution will help the ladder DNA sink and settle into the bottom of the well. This dispensing technique takes a bit of practice. Always add ladder to the first lane of a gel. 
+4. To the next well after the ladder well, dispense 20uL of your sample into that well. You can load less if your procedure requires and different casting tray combs allow for different maximum well volumes so check your electrophoresis tank manual for the optimal volumes per well.
+5. Repeat stel 4 for all remaining samples. If at least one gel lane remains open, add another 4uL of ladder to that adjacent empty well to bookend your samples. This helps if your gel run is skewed or there is a bend in your positive tank electrode which causes a bend in the migraion pattern across the wells.
+6. Set the electrophoresis powersupply to the appropriate voltage (typically 100v), connect the electrodes to the power supply, ensure any safety latches are engaged, and turn on the power supply. You should immediately see very fine bubbles forming at the negative electrode. This is a good indication that current is flowing into the tank.
+7. Allow the gel to run until the loading dye reaches the bottom quarter of the gel. This normally takes 20 minutes or so but it varies with gel box design and size.
+8. Turn off the electrophoresis power supply and remove the gel from the electrophoresis tank. Allow the gel to drip excess TAE Running Buffer back into the tank.
+9. Place your agarose gel slab onto a transilluminator or light box to view the resulting band pattern and process the gel if need be. Take a picture of every gel you run and keep a record of the results.

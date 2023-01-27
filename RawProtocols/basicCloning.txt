@@ -1,0 +1,16 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: Restriction Digest of Plasmid DNA via Traditional Cloning
+Description: Preparing and cutting plasmids to clone parts into backbones.
+1. Preheat a PCR machine to 37C. Thaw a vial of 10x Cutsmart Buffer (New England Biolabs) on ice.
+2. To a sterile 0.2mL PCR tube, add 16uL of backbone plasmid. Label the tube with a "V" for "vector".
+3. To another sterile 0.2mL PCR tube, add 16uL of donor plasmid which contains the insert you wish to clone. Label this tube with an "I" for "insert".
+4. Thaw and dispense 2uL of 10x Cutsmart Buffer (New England Biolabs) to each tube. Keep the Cutsmart Buffer on ice once thawed.
+5. To each tube add 1uL of the first restriction enzyme in your cloning plan.
+6. To each tube add 1uL of the second restriction enzyme in your cloning plan.
+7. Cap the tubes and vortex them in 3 pulses of 1 second to mix the contents thoroughly.
+8. Incubate the reaction tubes for 1hr at 37C.
+9. Remove the tubes from the PCR block and add 4uL of 6x Purple Loading Dye (New England Biolabs) to each tube.
+10. Cap and vortex the tubes. Check if tube labels have smeared and rewrite them if need be. Your samples are now ready for a gel run.

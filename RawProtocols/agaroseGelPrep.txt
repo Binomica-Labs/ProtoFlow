@@ -1,0 +1,16 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: RGNT
+Title: Agarose DNA Gel Preparation
+Description: To prepare an agarose gel slab and buffers for electrophoresis.
+1. To a 1L volumetric flask, add 10mL of 50x TAE Buffer Concentrate. This makes a 0.5x TAE Running Buffer. If your gel tank uses 1x TAE, please add 20mL of 50x TAE.
+2. Add distilled water to the 1L neck mark of the volumetric flask. Try to not overshoot. Use a squirt bottle to top the flask off to the mark.
+3. To a 250mL erlenmeyer flask, add 1.5g of Agarose powder.
+4. To the 250mL erlenment flask. add 150mL of your TAE Running Buffer.
+5. Cap the flask with a rubber stopper, swirl the contents, and microwave for 1 minute on max power.
+6. Using hot mitts or anything to keep your hands from burning, take the flask out of the microwave and give it a careful swirl.
+7. Place the flask back in the microwave for 30sec. Boil again in 10 second intervals if the agarose has not fully dissolved. It should appear clear as water and boiling when ready. Be careful as the contents can boil violently so do not microwave agarose unattended.
+8. Prepare your gel electrophoresis tank's casting tray. To a 50mL tube, add the appropriate amount of molten agarose. Add 0.5uL of GelGreen 10,000x DNA stain to the molten agarose.
+9. Swirl the tube contents carefully and then dispense the stained molten agarose into your casting tray.
+10. Allow the gel to solidify which can take around 20 minutes. Keep out of bright direct sunlight as the DNA stain is light senstive. Once solid, your gel is ready to run.
