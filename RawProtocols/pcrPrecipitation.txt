@@ -1,0 +1,17 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: MOLE
+Title: PCR Precipitation
+Description: A simple and affordable PCR purification protocol via PEG and Salt.
+1. To a completed PCR reaction in a 0.2mL PCR tube, add 1:1 PCR Precipitation Buffer.
+2. Vortex briefly to mix.
+3. Incubate at 37C in a PCR machine for 15 minutes.
+4. Transfer to 1.5mL tubes and spin down 15mins at maximum speed.
+5. Discard the supernatant.
+6. Add 200uL of ice cold 80% Ethanol, vortex to mix, and spin down 10mins at max speed.
+7. Decant supernatant and spin down 1min at max speed to collect residual alcohol.
+8. Using a 200uL pipette, carefully remove residual solvent.
+9. Dry at 37C for 5mins.
+10. Resuspend in 20uL of DH2O, vortex thoroughly and spin down briefly to fully resuspend pellet.
+11. Quantify DNA concentration via Qubit, Nanodrop, and/or Gel Electrophoresis. 
