@@ -3,7 +3,7 @@ Author: Sebastian S. Cocioba
 Lab: Binomica Labs
 Category: MOLE
 Title: PCR Precipitation
-Description: A simple and affordable PCR purification protocol via PEG and Salt.
+Description: A simple and affordable PCR purification protocol via PEG and Salt precipitation.
 1. To a completed PCR reaction in a 0.2mL PCR tube, add 1:1 PCR Precipitation Buffer.
 2. Vortex briefly to mix.
 3. Incubate at 37C in a PCR machine for 15 minutes.

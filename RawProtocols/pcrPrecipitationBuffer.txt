@@ -4,7 +4,7 @@ Lab: Binomica Labs
 Category: RGNT
 Title: PCR Precipitation Buffer
 Description: A polyethylene glycol and salt buffer for precipitating PCR amplicons
-1. To a 15mL tube, add 3g PEG 3350. I use Miralax Brand which works well.
+1. To a 15mL tube, add 3g PEG 3350. (I use Miralax brand which works well)
 2. Add 2.19g NaCl.
 3. Fill to 12mL with distilled H2O and vortex thoroughly to dissolve.
 4. Top off to the 15mL mark. Vortex thoroughly to mix. Store at 4C; good for 30 days.
