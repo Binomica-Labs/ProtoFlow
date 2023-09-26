@@ -1,0 +1,16 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: PROT
+Title: Simple Acetone Protein Crashout and Drying
+Description: A way to crash out proteins in native buffer using acetone 
+1. Isolate your protein of interest to the degree of purity you find applicable. This can be crude lysate or affinity purified. Elute in a comfortable buffer of your choice.
+2. To a given volume of protein isolate, add one volume of pure acetone.
+3. Vortex for a few seconds to ensure the solution mixes. The proteins will begin to crash out as a cloudy precipitate.
+4. Spin down the solution at 4000rpm for 5 minutes. This can be a simple fixed-angle centrifuge used for spinning down E. coli cells.
+5. Decant the supernatant carefully as to not disturb the pellet.
+6. Resupend the pellet in 2 volumes of acetone by vortexing for a few seconds.
+7. Spin down again as you did in step 4.
+8. Decant carefully and allow tube to dry in ambient room temp. This will take a few minutes to over an hour depending on room humidity.
+9. Scrape out the protein from the tube to store dry, or resuspend in your favorite buffer for downstream work.
+END
