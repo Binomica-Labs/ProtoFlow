@@ -1,0 +1,17 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: PROT
+Title: Crude Protein Isolation
+Description: A simple and affordable crude protein isolation protocol from microbial cell pellets.
+1. Streak out to colonies, an E. coli cell line expressing your protein of interest.
+2. Innoculate a 250mL flask containing LB + antibiotics with a well isolated single colony of your desired cell line. shake at 37C 250rpm overnight.
+3. Spin down the culture in 50mL or 15mL tubes. Decant the supernatant; check pellet for color if expressing a chromoprotein.
+4. Remove residual media from tube with a 1000uL pipette.
+5. Add 10mL of Protein Isolation Buffer to one of the cell pellet tubes. Vortex to resuspend the pellet fully.
+6. Transfer resuspended pellet to the next tube and resuspend the pellet as above.
+7. Repeat step 6 until all the pellets are resuspended and concentrated into a single tube. The final volume will be about 12mL.
+8. Incubate the cell lysis reaction at 37C shaking for 1hr. This will bring out your expressed protein into the solution.
+9. Spin down the lysed cells at 4000rpm for 15mins. The pellet should be beige and colorless if an expressed chromoprotein was fully removed from the cell pellet. If color persists, vortex to resuspend pellet and incubate for another 37C shaking.
+10. Transfer the supernatant to a fresh tube and label it with the contents and date. Freeze at -20C or process immediately.
+END
