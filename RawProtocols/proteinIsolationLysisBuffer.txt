@@ -1,0 +1,14 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: RGNT
+Title: Protein Isolation Lysis Buffer
+Description: A simple bacterial cell lysis buffer for extracting expressed proteins.
+1. To a 250mL volumetric flask, add 5mL Tris 1M pH 8.0.
+2. Add 2.5mL of EDTA 0.5M pH 8.0.
+3. Add 150mL of distilled water.
+4. Add 45.045g of Urea. Mix via inversion to fully dissolve.
+5. Add 25mL of Triton X-100 10% solution.
+6. Top off to the 250mL mark with distilled water. Mix by gentle inversion as to not generate too much foam.
+7. Store at room temp indefinitely.
+END
