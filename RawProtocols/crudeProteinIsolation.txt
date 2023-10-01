@@ -8,7 +8,7 @@ Description: A simple and affordable crude protein isolation protocol from micro
 2. Innoculate a 250mL flask containing LB + antibiotics with a well isolated single colony of your desired cell line. shake at 37C 250rpm overnight.
 3. Spin down the culture in 50mL or 15mL tubes. Decant the supernatant; check pellet for color if expressing a chromoprotein.
 4. Remove residual media from tube with a 1000uL pipette.
-5. Add 10mL of Protein Isolation Buffer to one of the cell pellet tubes. Vortex to resuspend the pellet fully.
+5. Add 10mL of Protein Isolation Lysis Buffer to one of the cell pellet tubes. Vortex to resuspend the pellet fully.
 6. Transfer resuspended pellet to the next tube and resuspend the pellet as above.
 7. Repeat step 6 until all the pellets are resuspended and concentrated into a single tube. The final volume will be about 12mL.
 8. Incubate the cell lysis reaction at 37C shaking for 1hr. This will bring out your expressed protein into the solution.
