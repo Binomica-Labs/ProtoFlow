@@ -1,0 +1,12 @@
+HANDLE: SSC
+Author: Sebastian S. Cocioba
+Lab: Binomica Labs
+Category: RGNT
+Title: DNA Shredding Buffer for Gene Shuffling
+Description: A simple dilution of DNAseI in glycerin for partial DNA digestion used in Gene Shuffling techniques.
+1. To a sterile 1.5mL microcentrifuge tube, add 1000uL of sterile 50% glycerin solution.
+2. Remove 1uL of glycerin from the tube.
+3. Add 1uL of DNAseI (New England Biolabs Cat# M0303S) to the glycerin solution.
+4. Vortex vigorously to mix the enzyme in the viscous glycerin solution.
+5. Store at -20C indefinitely.
+END
