@@ -4,18 +4,26 @@ Lab: Binomica Labs
 Category: MOLE
 Title: Gene Shuffling Protocol for Rapid Evolution of Proteins
 Description: A way to introduce random fragments of your target gene into the coding sequence of said gene via gene shuffling
-1. Amplify the desired coding sequence using routine taq polymerase.
-2. Add 1uL of DpnI directly to the PCR reaction and incubate for one hour at 37C to digest away any native DNA, leaving behind only intact PCR amplified DNA.
-3. Purify the resulting amplification reaction via PCR Precipitation into 20uL of distilled H2O.
-4. Digest 17uL of PCR amplicon using 1uL of DNA Shredding Buffer (1000x Dilution of NEB DNAseI Enzyme in 50% glycerol) along with 2uL of DNAseI Buffer (Manganese ions). The digestion time should be precisely 10 minutes at 37C followed by 75C for 10 minutes to heat kill the enzyme. I program my PCR machine to hold at 4C and load then diluted enzyme solution last. Quick vortex followed by immediate placement onto the PCR heatblock.
-5. Run the digested PCR amplicon on a gel and isolate the 100bp to 300bp region of the smear into a sterile 1.5mL tube.
-6. Proceed with gel purification (or freeze and squeeze method) and elute in 20uL of sterile distilled water.
-7. Prepare a PCR reaction WITHOUT PRIMERS, using 2uL of the gel purified amplicon digest as template. This fragment pool will act as a random primer set which will anneal and assemble as random fragments. Run the PCR using the same program used to amplify your gene of interest initially. DO NOT FORGET TO OMIT PRIMERS; CRITICAL DETAIL. NO PRIMERS IN THIS REACTION.
-8. PCR purify the resulting reaction using PCR Precipitation and elute in the same volume as the original PCR reaction.
-9. Set up another PCR reaction, this time with primers that amplify your gene of interest along with the addition of restriction sites for later cloning.
+1. Amplify the desired coding sequence using routine taq polymerase at 50uL reaction volume x 8 tubes in a PCR tube strip, with or without up to 5mM Manganese ions (Mn2+). Add manganese if point mutagenesis is also desired. Note this will drastically reduce PCR product.
+2. Add 1uL of DpnI enzyme directly to each PCR reaction tube and incubate for one hour at 37C to digest away any native DNA, leaving behind only intact PCR amplified DNA.
+3. Add 50uL of PEG-NaCL solution (see PEG PCR Purification Buffer recipe) to each PCR reaction tube, vortex, and incubate at 37C for 15mins to precipiate the amplified DNA.
+4. Combine the precipitated reactions together into two 1.5mL tubes (400uL per tube) and add 800uL of 80% Ethanol to each tube. Vortex and spin down for 15mins.
+5. Decant the supernatant, visually inspect for small speck/smear of translucent material in the tube - this is your DNA pellet. Spin down both tubes for 1min to bring down any residual supernatant. Remove residual liquid with a 200uL pipette.
+6. Incubate the two tubes with the lids open for 5mins at 37C to dry the DNA pellet.
+7. Resuspend the tubes with 200uL of distilled water, vortex vigorously in 3sec pulses, and combine into a single tube. Label this tube as your gene of interest + "BULK". We will refer to this as your BULK tube from now on. Store this at -20C for later use as it will be handy when optimizing reactions or experimenting with new variables/conditions.
+8. Pre-chill your PCR machine to 4C or prepare a PCR tube ice block; the next step MUST be prepared on ice to not let DNA shred beyond desired incubation time.
+9. To an 8-tube PCR strip, add 17uL of BULK DNA to each tube. 
+10. Place the PCR strip on ice or onto a pre-chilled PCR machine and add 1uL of DNA Shredding Buffer (1000x Dilution of NEB DNAseI Enzyme in 50% glycerol; ideally prepared fresh and well-vortexed) to each tube, along with 2uL of DNAseI Buffer (Manganese ions; came with NEB enzyme order). Vortex very briefly and place onto PCR machine and begin the digestion program. The digestion time should be precisely 10 minutes at 37C followed by 75C for 10 minutes to heat kill the enzyme. I program my PCR machine to hold at 4C and load then diluted enzyme solution last.
+11. Run the digested PCR amplicon on a gel and isolate the 100bp to 300bp region of the smear into a sterile 1.5mL tube.
+12. Freeze the cut out gel slabs at -20C for 60mins to completely freeze the agarose gel.
+13. Quickly remove the tubes from the freezer and place them onto a microcentrifuge. Spin at max speed for 10mins.
+14. Carefully remove the supernatant from each tube and label this tube SHRED. Store the tube at -20C for later use. We will refer to this as the SHRED tube from now on.
+15. Prepare a PCR reaction WITHOUT PRIMERS, using 2.5uL of the SHRED tube as template. This fragment pool will act as a random primer set which will anneal and assemble as random fragments. Run the PCR using the same program used to amplify your gene of interest initially. DO NOT FORGET TO OMIT PRIMERS; CRITICAL DETAIL. NO PRIMERS IN THIS REACTION.
+8. PCR purify the resulting reaction using PCR Precipitation and elute as in steps 3 to 7. Label this as your "REASSEMBLY" tube.
+9. Set up another PCR reaction, this time with primers that amplify your gene of interest along with the addition of restriction sites for later cloning, using the same PCR conditions as in step 1.
 10. Run an agarose gel to determine if the amplification was successful, there should be a DNA band of similar size to your original gene as the major product in the lane. There will likely be a smear; this is normal.
-11 Isolate the bright PCR amplicon via gel purification (or PCR precipitate the whole reaction; this step needs empirical testing to see if worth the effort or not) and elute in 20uL of sterile distilled H2O.
-12. Digest 16uL of your final shuffled amplicon library with the enzymes corresponding to the cut sites added by the previous PCR reaction, 1uL of each enzyme, followed by 2uL of Cutsmart Buffer. Incubate this reaction for 1hr at 37C. In another tube, digest a protein expression plasmid compatible with the aforementioned cut sites using the same enzymes and buffer.
+11 Isolate the bright PCR amplicon via the freeze and squeeze method (steps 12 to 14). Label this tube as "FINAL".
+12. Digest 16uL of your FINAL DNA (shuffled amplicon library) with the enzymes corresponding to the cut sites added by the previous PCR reaction, 1uL of each enzyme, followed by 2uL of Cutsmart Buffer. Incubate this reaction for 1hr at 37C. In another tube, digest a protein expression plasmid compatible with the aforementioned cut sites using the same enzymes and buffer.
 13. Run an agarose gel to isolate the desired digested bands, plasmid backbone and insert, via gel purification (or freeze and squeeze) in separate tubes. Elute in 20uL of sterile distilled H2O.
 14. Ligate the purified bands at 16C overnight using 17.5uL of insert, 17.5uL of backbone, 4uL of T4 Ligase Buffer, and 1uL of T4 DNA ligase in a sterile 0.2mL PCR Tube.
 15. Transform 5uL of ligation reaction into 50uL of competent cells. Use a protein production strain of E. coli such as BL21; plate cells onto media with antibiotics corresponding to your backbone plasmid and incubate overnight at 37C. Transform cells with your original protein in a similar expression plasmid in another tube as a control.
