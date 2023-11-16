@@ -1,0 +1,11 @@
+ID: SSC-BACT-003
+Author: Sebastian S. Cocioba
+Title: Ultra Fast TSS Chemically Competent E. coli Cell prep
+Description: How to make competent cells for heat shock transformation via TSS buffer with time-saving shortcuts.
+1. Streak a sample of E. coli cells onto LB-Agar and incubate overnight at 37C.
+2. The following day, select one colony with a sterile pipette tip or toothpick and place it in 20mL of liquid LB Broth in a 125mL erlenmeyer flask. shake the flask overnight at 37C, 250rpm.
+3. The following day, dispense 1mL of the overnight culture into a sterile 2mL microcentrifuge tube on ice.
+4. Spin down the cells for 15 seconds at 10,000G to gently pellet.
+5. Decant supernatant completely and resuspend cells in 100uL of ice cold TSS Buffer on ice.
+6. Aliquot 10uL of cells per heat shock reaction. Recommended heat shock parameters: 10mins ice incubation with plasmid, 42C 90sec shock, 5min ice recovery, 1hr 1mL LB 37C recovery, plate 100uL per petri dish.
+7. Freeze at -20C or -80C. TSS is cryoprotectant but will only keep cells competent for 5 weeks at -20C. Minimize freeze thaw by aluqotting into 0.2mL PCR tubes.
